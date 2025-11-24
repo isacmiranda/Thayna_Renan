@@ -85,7 +85,7 @@ const CardapioWood = () => {
             <li>Caponata de berinjela em cestinha crocante</li>
             <li>Potato cheese (batata bolinha com creme de gorgonzola e molho pesto)</li>
             <li>Tabule no copo</li>
-            <li>Roll de atum</li>
+            <li>Rall de Calabresa</li>
           </ul>
         </MenuSection>
 
@@ -142,7 +142,7 @@ const CardapioWood = () => {
         {/* DOCES */}
         <MenuSection title="DOCES" variant="dark" isHighlighted={true}>
           <div className="flex flex-wrap gap-2 mt-2">
-            {['Brigadeiro', 'Brigadeiro de ninho', 'Surpresa de uva', 'Beijinho'].map((doce) => (
+            {['Brigadeiro', 'Brigadeiro de ninho'].map((doce) => (
               <span
                 key={doce}
                 className="px-3 py-1 rounded-full text-sm font-medium bg-[#eef6e6] border border-[#d9e6ce] whitespace-nowrap"
