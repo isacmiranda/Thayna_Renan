@@ -1,9 +1,19 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const CardapioWood = () => {
   const [copied, setCopied] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const pixName = "Renan da Silva Santos";
   const pix = "499.927.578-33";
+
+  // Simula o carregamento do conteúdo
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000); // 3 segundos para demonstrar o preloader
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleCopy = async () => {
     try {
@@ -43,6 +53,48 @@ const CardapioWood = () => {
     );
   };
 
+  // Preloader Component
+  if (isLoading) {
+    return (
+      <div className="fixed inset-0 .bg-gradient-to-br from-[#f8fff4] to-[#eaf1de] flex items-center justify-center z-50">
+        <div className="text-center">
+          {/* Logo animada */}
+          <div className="relative mb-8">
+            <div className="w-24 h-24 mx-auto mb-4 relative">
+              <img
+                src="../public/icone-alianca2.png"
+                alt="Aliança - Thayna & Renan"
+                className="w-full h-full object-contain animate-pulse"
+              />
+              {/* Efeito de brilho ao redor */}
+              <div className="absolute inset-0 rounded-full bg-[#6b8e23] opacity-20 animate-ping"></div>
+            </div>
+            
+            {/* Anel de loading */}
+            <div className="w-32 h-32 mx-auto border-4 border-transparent border-t-[#6b8e23] border-r-[#6b8e23] rounded-full animate-spin absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+          </div>
+
+          {/* Texto animado */}
+          <div className="space-y-2">
+            <h2 className="text-2xl font-bold text-[#325018] animate-bounce">
+              Thayna & Renan
+            </h2>
+            <p className="text-[#3b4a1f] animate-pulse">
+              Carregando nosso cardápio especial...
+            </p>
+            
+            {/* Loading dots */}
+            <div className="flex justify-center space-x-1 mt-4">
+              <div className="w-2 h-2 bg-[#6b8e23] rounded-full animate-bounce"></div>
+              <div className="w-2 h-2 bg-[#6b8e23] rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
+              <div className="w-2 h-2 bg-[#6b8e23] rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen .bg-gradient-to-br from-[#f8fff4] to-[#eaf1de] py-6 px-4 sm:px-6 lg:px-8">
       <div className="max-w-2xl mx-auto space-y-4 sm:space-y-6">
@@ -67,7 +119,7 @@ const CardapioWood = () => {
 
         {/* HEADER DO CARDÁPIO */}
         <div className="p-6 rounded-2xl .bg-gradient-to-r from-[#eaf1de] to-white shadow-lg border border-[#e3ebd6] text-center">
-          <h1 className="text-2xl sm:text-3xl font-bold text-[#325018]">CARDÁPIO-Casamento T & R </h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-[#325018]">CARDÁPIO - Casamento T & R</h1>
         </div>
 
         {/* ENTRADAS */}
@@ -142,7 +194,7 @@ const CardapioWood = () => {
         {/* DOCES */}
         <MenuSection title="DOCES" variant="dark" isHighlighted={true}>
           <div className="flex flex-wrap gap-2 mt-2">
-            {['Brigadeiro', 'Brigadeiro de ninho'].map((doce) => (
+            {['Brigadeiro', 'Brigadeiro de ninho','Surpresa de uva','Beijinho'].map((doce) => (
               <span
                 key={doce}
                 className="px-3 py-1 rounded-full text-sm font-medium bg-[#eef6e6] border border-[#d9e6ce] whitespace-nowrap"
