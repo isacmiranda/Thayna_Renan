@@ -62,7 +62,7 @@ const CardapioWood = () => {
           <div className="relative mb-8">
             <div className="w-24 h-24 mx-auto mb-4 relative">
               <img
-                src="../public/icone-alianca2.png"
+                src="/icone-alianca2.png"
                 alt="Aliança - Thayna & Renan"
                 className="w-full h-full object-contain animate-pulse"
               />
