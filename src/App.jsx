@@ -119,7 +119,7 @@ const CardapioWood = () => {
 
         {/* HEADER DO CARDÁPIO */}
         <div className="p-6 rounded-2xl .bg-gradient-to-r from-[#eaf1de] to-white shadow-lg border border-[#e3ebd6] text-center">
-          <h1 className="text-2xl sm:text-3xl font-bold text-[#325018]">CARDÁPIO - Casamento T & R</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-[#325018]">CARDÁPIO-Casamento T&R</h1>
         </div>
 
         {/* ENTRADAS */}
